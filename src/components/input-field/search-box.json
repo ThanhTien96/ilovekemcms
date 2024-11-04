@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_input_field_search_boxes",
+  "info": {
+    "displayName": "search-box"
+  },
+  "options": {},
+  "attributes": {
+    "buttonText": {
+      "type": "string"
+    },
+    "placeholder": {
+      "type": "string"
+    }
+  }
+}

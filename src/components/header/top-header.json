@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_header_top_headers",
+  "info": {
+    "displayName": "topHeader",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text",
+      "required": true
+    },
+    "contact": {
+      "type": "component",
+      "repeatable": true,
+      "component": "contact.contact-link"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_header_headers",
+  "info": {
+    "displayName": "header",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "searchBox": {
+      "type": "component",
+      "repeatable": false,
+      "component": "input-field.search-box"
+    },
+    "navbar": {
+      "type": "component",
+      "repeatable": true,
+      "component": "header.navlink"
+    },
+    "topHeader": {
+      "type": "component",
+      "repeatable": false,
+      "component": "header.top-header"
+    }
+  }
+}
