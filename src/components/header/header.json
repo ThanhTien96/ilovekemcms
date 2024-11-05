@@ -33,6 +33,11 @@
       "type": "component",
       "repeatable": false,
       "component": "header.top-header"
+    },
+    "footer": {
+      "type": "component",
+      "repeatable": false,
+      "component": "footer.footer"
     }
   }
 }

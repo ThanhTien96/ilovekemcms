@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_contact_addresses",
+  "info": {
+    "displayName": "address",
+    "icon": "globe"
+  },
+  "options": {},
+  "attributes": {
+    "address": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}

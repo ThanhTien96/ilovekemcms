@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_footer_footers",
+  "info": {
+    "displayName": "footer",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "contactLink": {
+      "type": "component",
+      "repeatable": true,
+      "component": "contact.contact-link"
+    },
+    "contactTitle": {
+      "type": "text",
+      "required": true
+    },
+    "contactDescription": {
+      "type": "text"
+    },
+    "addressTitle": {
+      "type": "string"
+    },
+    "address": {
+      "type": "component",
+      "repeatable": true,
+      "component": "contact.address"
+    },
+    "social": {
+      "type": "component",
+      "repeatable": true,
+      "component": "contact.contact-link"
+    }
+  }
+}

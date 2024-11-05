@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_contact_contact_forms",
+  "info": {
+    "displayName": "Contact Form",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "field": {
+      "type": "component",
+      "repeatable": true,
+      "component": "input-field.input"
+    },
+    "submitButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "support.buttn"
+    }
+  }
+}

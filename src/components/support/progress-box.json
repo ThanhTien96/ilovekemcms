@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_support_progress_boxes",
+  "info": {
+    "displayName": "Progress box"
+  },
+  "options": {},
+  "attributes": {
+    "media": {
+      "allowedTypes": [
+        "files",
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

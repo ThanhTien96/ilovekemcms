@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_home_page_contact_sections",
+  "info": {
+    "displayName": "Contact Section"
+  },
+  "options": {},
+  "attributes": {
+    "subTitle": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "googleMapLink": {
+      "type": "text"
+    },
+    "form": {
+      "type": "component",
+      "repeatable": false,
+      "component": "contact.contact-form"
+    }
+  }
+}

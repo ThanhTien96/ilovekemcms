@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_support_step_shopings",
+  "info": {
+    "displayName": "Step Shoping",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "step": {
+      "type": "integer"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

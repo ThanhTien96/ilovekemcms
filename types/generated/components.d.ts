@@ -1,9 +1,37 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface ContactAddress extends Struct.ComponentSchema {
+  collectionName: 'components_contact_addresses';
+  info: {
+    displayName: 'address';
+    icon: 'globe';
+  };
+  attributes: {
+    address: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    link: Schema.Attribute.String;
+  };
+}
+
+export interface ContactContactForm extends Struct.ComponentSchema {
+  collectionName: 'components_contact_contact_forms';
+  info: {
+    description: '';
+    displayName: 'Contact Form';
+  };
+  attributes: {
+    field: Schema.Attribute.Component<'input-field.input', true>;
+    submitButton: Schema.Attribute.Component<'support.buttn', false>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface ContactContactLink extends Struct.ComponentSchema {
   collectionName: 'components_contact_contact_links';
   info: {
-    displayName: 'contactLink';
+    description: '';
+    displayName: 'Contact Link';
   };
   attributes: {
     icon: Schema.Attribute.String;
@@ -11,6 +39,22 @@ export interface ContactContactLink extends Struct.ComponentSchema {
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
+  };
+}
+
+export interface FooterFooter extends Struct.ComponentSchema {
+  collectionName: 'components_footer_footers';
+  info: {
+    description: '';
+    displayName: 'footer';
+  };
+  attributes: {
+    address: Schema.Attribute.Component<'contact.address', true>;
+    addressTitle: Schema.Attribute.String;
+    contactDescription: Schema.Attribute.Text;
+    contactLink: Schema.Attribute.Component<'contact.contact-link', true>;
+    contactTitle: Schema.Attribute.Text & Schema.Attribute.Required;
+    social: Schema.Attribute.Component<'contact.contact-link', true>;
   };
 }
 
@@ -22,6 +66,7 @@ export interface HeaderHeader extends Struct.ComponentSchema {
     icon: 'bulletList';
   };
   attributes: {
+    footer: Schema.Attribute.Component<'footer.footer', false>;
     logo: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required;
     navbar: Schema.Attribute.Component<'header.navlink', true>;
@@ -34,7 +79,8 @@ export interface HeaderHeader extends Struct.ComponentSchema {
 export interface HeaderNavlink extends Struct.ComponentSchema {
   collectionName: 'components_header_navlinks';
   info: {
-    displayName: 'navlink';
+    description: '';
+    displayName: 'Nav link';
     icon: 'link';
   };
   attributes: {
@@ -50,7 +96,7 @@ export interface HeaderTopHeader extends Struct.ComponentSchema {
   collectionName: 'components_header_top_headers';
   info: {
     description: '';
-    displayName: 'topHeader';
+    displayName: 'Top Header';
   };
   attributes: {
     contact: Schema.Attribute.Component<'contact.contact-link', true>;
@@ -58,10 +104,108 @@ export interface HeaderTopHeader extends Struct.ComponentSchema {
   };
 }
 
+export interface HomePageContactSection extends Struct.ComponentSchema {
+  collectionName: 'components_home_page_contact_sections';
+  info: {
+    displayName: 'Contact Section';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    form: Schema.Attribute.Component<'contact.contact-form', false>;
+    googleMapLink: Schema.Attribute.Text;
+    subTitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface HomePageHeroBanner extends Struct.ComponentSchema {
+  collectionName: 'components_home_page_hero_banners';
+  info: {
+    description: '';
+    displayName: 'Hero Banner';
+  };
+  attributes: {
+    button: Schema.Attribute.Component<'support.buttn', true>;
+    description: Schema.Attribute.Text;
+    media: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Schema.Attribute.Required;
+    title: Schema.Attribute.Text;
+  };
+}
+
+export interface HomePageStepSection extends Struct.ComponentSchema {
+  collectionName: 'components_home_page_step_sections';
+  info: {
+    description: '';
+    displayName: 'Step Section';
+  };
+  attributes: {
+    description: Schema.Attribute.RichText;
+    mainMedia: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    progress: Schema.Attribute.Component<'support.progress-box', true>;
+    step: Schema.Attribute.Component<'support.step-shoping', true>;
+    subTitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface HomePageStorySection extends Struct.ComponentSchema {
+  collectionName: 'components_home_page_story_sections';
+  info: {
+    description: '';
+    displayName: 'Story Section';
+  };
+  attributes: {
+    description: Schema.Attribute.RichText;
+    media: Schema.Attribute.Media<'images' | 'files', true>;
+    subTitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface InputFieldInput extends Struct.ComponentSchema {
+  collectionName: 'components_input_field_inputs';
+  info: {
+    description: '';
+    displayName: 'input';
+  };
+  attributes: {
+    label: Schema.Attribute.String;
+    placeholder: Schema.Attribute.String;
+    type: Schema.Attribute.Enumeration<
+      [
+        'text',
+        'password',
+        'email',
+        'url',
+        'tel',
+        'search',
+        'number',
+        'hidden',
+        'date',
+        'datetime-local',
+        'month',
+        'week',
+        'time',
+        'radio',
+        'checkbox',
+        'select',
+        'file',
+        'image',
+        'color',
+        'range',
+        'textarea',
+      ]
+    >;
+  };
+}
+
 export interface InputFieldSearchBox extends Struct.ComponentSchema {
   collectionName: 'components_input_field_search_boxes';
   info: {
-    displayName: 'search-box';
+    description: '';
+    displayName: 'Search Box';
   };
   attributes: {
     buttonText: Schema.Attribute.String;
@@ -69,14 +213,66 @@ export interface InputFieldSearchBox extends Struct.ComponentSchema {
   };
 }
 
+export interface SupportButtn extends Struct.ComponentSchema {
+  collectionName: 'components_support_buttns';
+  info: {
+    description: '';
+    displayName: 'button';
+  };
+  attributes: {
+    btnLink: Schema.Attribute.String;
+    btnText: Schema.Attribute.String;
+    icon: Schema.Attribute.String;
+    type: Schema.Attribute.Enumeration<
+      ['primary', 'secondary', 'warning', 'dark']
+    >;
+  };
+}
+
+export interface SupportProgressBox extends Struct.ComponentSchema {
+  collectionName: 'components_support_progress_boxes';
+  info: {
+    displayName: 'Progress box';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    media: Schema.Attribute.Media<'files' | 'images'>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SupportStepShoping extends Struct.ComponentSchema {
+  collectionName: 'components_support_step_shopings';
+  info: {
+    description: '';
+    displayName: 'Step Shoping';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    step: Schema.Attribute.Integer;
+    title: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'contact.address': ContactAddress;
+      'contact.contact-form': ContactContactForm;
       'contact.contact-link': ContactContactLink;
+      'footer.footer': FooterFooter;
       'header.header': HeaderHeader;
       'header.navlink': HeaderNavlink;
       'header.top-header': HeaderTopHeader;
+      'home-page.contact-section': HomePageContactSection;
+      'home-page.hero-banner': HomePageHeroBanner;
+      'home-page.step-section': HomePageStepSection;
+      'home-page.story-section': HomePageStorySection;
+      'input-field.input': InputFieldInput;
       'input-field.search-box': InputFieldSearchBox;
+      'support.buttn': SupportButtn;
+      'support.progress-box': SupportProgressBox;
+      'support.step-shoping': SupportStepShoping;
     }
   }
 }

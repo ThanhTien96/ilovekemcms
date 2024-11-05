@@ -1,8 +1,9 @@
 {
   "collectionName": "components_header_navlinks",
   "info": {
-    "displayName": "navlink",
-    "icon": "link"
+    "displayName": "Nav link",
+    "icon": "link",
+    "description": ""
   },
   "options": {},
   "attributes": {

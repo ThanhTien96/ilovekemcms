@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_input_field_inputs",
+  "info": {
+    "displayName": "input",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "placeholder": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "text",
+        "password",
+        "email",
+        "url",
+        "tel",
+        "search",
+        "number",
+        "hidden",
+        "date",
+        "datetime-local",
+        "month",
+        "week",
+        "time",
+        "radio",
+        "checkbox",
+        "select",
+        "file",
+        "image",
+        "color",
+        "range",
+        "textarea"
+      ]
+    }
+  }
+}

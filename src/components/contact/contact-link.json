@@ -1,7 +1,8 @@
 {
   "collectionName": "components_contact_contact_links",
   "info": {
-    "displayName": "contactLink"
+    "displayName": "Contact Link",
+    "description": ""
   },
   "options": {},
   "attributes": {

@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_support_buttns",
+  "info": {
+    "displayName": "button",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "btnText": {
+      "type": "string"
+    },
+    "btnLink": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary",
+        "warning",
+        "dark"
+      ]
+    },
+    "icon": {
+      "type": "string"
+    }
+  }
+}
