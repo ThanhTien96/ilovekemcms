@@ -1,7 +1,7 @@
 {
-  "collectionName": "components_contact_contact_forms",
+  "collectionName": "components_meta_data_meta_data",
   "info": {
-    "displayName": "Contact Form",
+    "displayName": "Meta Data",
     "description": ""
   },
   "options": {},
@@ -9,17 +9,21 @@
     "title": {
       "type": "string"
     },
-    "field": {
+    "metaTag": {
       "type": "component",
       "repeatable": true,
-      "component": "input-field.input"
+      "component": "meta-data.meta-tag"
     },
-    "submitButton": {
-      "type": "component",
-      "repeatable": false,
-      "component": "support.buttn"
+    "icon": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
     },
-    "backgroundImage": {
+    "metaImage": {
       "allowedTypes": [
         "images",
         "files"

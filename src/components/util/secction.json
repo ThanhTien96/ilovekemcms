@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_util_secctions",
+  "info": {
+    "displayName": "Secction"
+  },
+  "options": {},
+  "attributes": {
+    "subTitle": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}

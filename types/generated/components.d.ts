@@ -1,19 +1,5 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
-export interface ContactAddress extends Struct.ComponentSchema {
-  collectionName: 'components_contact_addresses';
-  info: {
-    displayName: 'address';
-    icon: 'globe';
-  };
-  attributes: {
-    address: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique;
-    link: Schema.Attribute.String;
-  };
-}
-
 export interface ContactContactForm extends Struct.ComponentSchema {
   collectionName: 'components_contact_contact_forms';
   info: {
@@ -21,6 +7,7 @@ export interface ContactContactForm extends Struct.ComponentSchema {
     displayName: 'Contact Form';
   };
   attributes: {
+    backgroundImage: Schema.Attribute.Media<'images' | 'files'>;
     field: Schema.Attribute.Component<'input-field.input', true>;
     submitButton: Schema.Attribute.Component<'support.buttn', false>;
     title: Schema.Attribute.String;
@@ -49,11 +36,11 @@ export interface FooterFooter extends Struct.ComponentSchema {
     displayName: 'footer';
   };
   attributes: {
-    address: Schema.Attribute.Component<'contact.address', true>;
     addressTitle: Schema.Attribute.String;
     contactDescription: Schema.Attribute.Text;
     contactLink: Schema.Attribute.Component<'contact.contact-link', true>;
     contactTitle: Schema.Attribute.Text & Schema.Attribute.Required;
+    locations: Schema.Attribute.Relation<'oneToMany', 'api::location.location'>;
     social: Schema.Attribute.Component<'contact.contact-link', true>;
   };
 }
@@ -213,6 +200,32 @@ export interface InputFieldSearchBox extends Struct.ComponentSchema {
   };
 }
 
+export interface MetaDataMetaData extends Struct.ComponentSchema {
+  collectionName: 'components_meta_data_meta_data';
+  info: {
+    description: '';
+    displayName: 'Meta Data';
+  };
+  attributes: {
+    icon: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    metaImage: Schema.Attribute.Media<'images' | 'files'>;
+    metaTag: Schema.Attribute.Component<'meta-data.meta-tag', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface MetaDataMetaTag extends Struct.ComponentSchema {
+  collectionName: 'components_meta_data_meta_tags';
+  info: {
+    displayName: 'Meta Tag';
+  };
+  attributes: {
+    content: Schema.Attribute.String;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SupportButtn extends Struct.ComponentSchema {
   collectionName: 'components_support_buttns';
   info: {
@@ -254,10 +267,33 @@ export interface SupportStepShoping extends Struct.ComponentSchema {
   };
 }
 
+export interface UtilProductSection extends Struct.ComponentSchema {
+  collectionName: 'components_util_product_sections';
+  info: {
+    description: '';
+    displayName: 'Product section';
+  };
+  attributes: {
+    product_types: Schema.Attribute.Relation<'oneToMany', 'api::type.type'>;
+    products: Schema.Attribute.Relation<'oneToMany', 'api::product.product'>;
+  };
+}
+
+export interface UtilSecction extends Struct.ComponentSchema {
+  collectionName: 'components_util_secctions';
+  info: {
+    displayName: 'Secction';
+  };
+  attributes: {
+    description: Schema.Attribute.RichText;
+    subTitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
-      'contact.address': ContactAddress;
       'contact.contact-form': ContactContactForm;
       'contact.contact-link': ContactContactLink;
       'footer.footer': FooterFooter;
@@ -270,9 +306,13 @@ declare module '@strapi/strapi' {
       'home-page.story-section': HomePageStorySection;
       'input-field.input': InputFieldInput;
       'input-field.search-box': InputFieldSearchBox;
+      'meta-data.meta-data': MetaDataMetaData;
+      'meta-data.meta-tag': MetaDataMetaTag;
       'support.buttn': SupportButtn;
       'support.progress-box': SupportProgressBox;
       'support.step-shoping': SupportStepShoping;
+      'util.product-section': UtilProductSection;
+      'util.secction': UtilSecction;
     }
   }
 }

@@ -21,15 +21,15 @@
     "addressTitle": {
       "type": "string"
     },
-    "address": {
-      "type": "component",
-      "repeatable": true,
-      "component": "contact.address"
-    },
     "social": {
       "type": "component",
       "repeatable": true,
       "component": "contact.contact-link"
+    },
+    "locations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::location.location"
     }
   }
 }

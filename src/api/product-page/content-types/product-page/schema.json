@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "home_pages",
+  "collectionName": "product_pages",
   "info": {
-    "singularName": "home-page",
-    "pluralName": "home-pages",
-    "displayName": "Home Page",
+    "singularName": "product-page",
+    "pluralName": "product-pages",
+    "displayName": "Product Page",
     "description": ""
   },
   "options": {
@@ -17,15 +17,14 @@
       "repeatable": false,
       "component": "meta-data.meta-data"
     },
-    "section": {
+    "productKind": {
       "type": "dynamiczone",
       "components": [
-        "util.secction",
-        "home-page.hero-banner",
-        "home-page.story-section",
-        "home-page.step-section",
-        "home-page.contact-section"
+        "util.product-section"
       ]
+    },
+    "title": {
+      "type": "string"
     }
   }
 }

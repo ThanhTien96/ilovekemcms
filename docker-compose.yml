@@ -18,9 +18,9 @@ services:
 
   cms-server:
     container_name: cms-server
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: thanhtien2094/cms-server:v1.0
+    environment:
+      - DATABASE_HOST=postgres-strapi
     ports:
       - "1337:1337"
     networks:
